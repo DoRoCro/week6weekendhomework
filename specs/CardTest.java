@@ -16,7 +16,15 @@ public class CardTest {
   public void cardHasNumberAndSuit() {
     card = new Card(Suit.HEARTS, CardNumber.ACE );
     assertEquals( Suit.HEARTS ,card.getSuit());
-    assertEquals( CardNumber.ACE, card.getCardnumber());
+    assertEquals( CardNumber.ACE, card.getCardNumber());
+
+  }
+
+  public void cardHasSuitAndNumber() {
+    // test for lazy card creation where parameter order doesn't matter
+    card = new Card( CardNumber.ACE, Suit.HEARTS );
+    assertEquals( Suit.HEARTS ,card.getSuit());
+    assertEquals( CardNumber.ACE, card.getCardNumber());
 
   }
 

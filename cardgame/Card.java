@@ -12,10 +12,14 @@ public class Card {
     this.cardnumber = cardnumber;
   }
 
+  public Card( CardNumber cardnumber, Suit suit) {
+    this(suit, cardnumber);
+  }
+
   public Suit getSuit(){
     return this.suit;
   }
-  public CardNumber getCardnumber(){
+  public CardNumber getCardNumber(){
     return this.cardnumber;
   }
 
