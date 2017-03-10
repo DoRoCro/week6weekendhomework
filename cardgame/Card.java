@@ -23,11 +23,17 @@ public class Card {
     return this.cardnumber;
   }
 
+  // @Override
   public Boolean equals(Card card){
     if (card instanceof Card) 
       return (this.suit == card.getSuit() && this.cardnumber == card.getCardNumber()); 
     else 
       return false;
   }
+  // @Override
+  // public int hashCode();{
+  //   return hash(this.suit, this.cardnumber);
+  // }
+
 
 }

@@ -1,13 +1,18 @@
 package cardgame;
 
 public enum Suit {
-  DIAMONDS ,
-  CLUBS    ,
-  HEARTS   ,
-  SPADES   ;
+  DIAMONDS (SuitColour.RED),
+  CLUBS    (SuitColour.BLACK),
+  HEARTS   (SuitColour.RED),
+  SPADES   (SuitColour.BLACK);
 
-  // public const colour(Suit suit){
-  //   if (suit == DIAMOND  || suit == HEART) return RED;
-  //   else return BLACK;
-  // }
+  private final SuitColour colour;
+
+  Suit(SuitColour colour){
+      this.colour = colour;
+  }
+
+  public SuitColour colour(Suit suit){
+    return suit.colour;
+  }
 }
