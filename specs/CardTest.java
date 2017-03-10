@@ -9,23 +9,30 @@ public class CardTest {
   CardNumber cardnumber;
 
   @Before
-  // suit = Suit.HEARTS;
-  // cardnumber = CardNumber.ACE;
+  public void before(){  
+    card = new Card(Suit.HEARTS, CardNumber.ACE );
+  }
 
   @Test
-  public void cardHasNumberAndSuit() {
-    card = new Card(Suit.HEARTS, CardNumber.ACE );
+  public void cardHasSuitAndNumber() {
     assertEquals( Suit.HEARTS ,card.getSuit());
     assertEquals( CardNumber.ACE, card.getCardNumber());
 
   }
 
-  public void cardHasSuitAndNumber() {
+  @Test
+  public void cardHasNumberAndSuit() {
     // test for lazy card creation where parameter order doesn't matter
     card = new Card( CardNumber.ACE, Suit.HEARTS );
     assertEquals( Suit.HEARTS ,card.getSuit());
     assertEquals( CardNumber.ACE, card.getCardNumber());
+  }
 
+  @Test
+  public void cardCanBeDuplicated() {
+    card = new Card( CardNumber.ACE, Suit.HEARTS );
+    Card card2 = new Card( CardNumber.ACE, Suit.HEARTS );
+    assertEquals(true, card2.equals(card));
   }
 
 }

@@ -23,4 +23,11 @@ public class Card {
     return this.cardnumber;
   }
 
+  public Boolean equals(Card card){
+    if (card instanceof Card) 
+      return (this.suit == card.getSuit() && this.cardnumber == card.getCardNumber()); 
+    else 
+      return false;
+  }
+
 }
