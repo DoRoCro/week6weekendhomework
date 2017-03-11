@@ -53,7 +53,8 @@ public class DeckTest {
     int cardsBefore = deck.cardCount();
     Card dealt = deck.dealCard();
     int cardsAfter = deck.cardCount();
-    assertEquals("ACE of SPADES" , dealt.toString());
+    // assertEquals("ACE of SPADES" , dealt.toString());  // generalised in line below
+    assertEquals(CardNumber.values()[CardNumber.values().length -1] + " of " + Suit.values()[Suit.values().length -1] , dealt.toString());
     assertEquals(cardsBefore , cardsAfter + 1 );
   }
 
