@@ -12,11 +12,16 @@ public class DeckTest {
   @Before
   public void before(){  
     card = new Card(Suit.HEARTS, CardNumber.ACE );
+    deck = new Deck( CardNumber.values(), Suit.values() );
   }
 
   @Test
   public void canCreateNewFullDeck(){
-    deck = new Deck( CardNumber.values() ,  Suit.values() );
-    assertEquals(52, deck.CardCount());
+    assertEquals(CardNumber.values().length * Suit.values().length, deck.CardCount());
   }
+
+  // @Test 
+  // public void newDeckHasCardsInIt(){
+  //   assertEquals(deck[1].class, Card);
+  // }
 }
