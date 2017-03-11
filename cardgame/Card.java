@@ -3,7 +3,10 @@ package cardgame;
 import java.util.ArrayList; 
 
 public class Card {
-
+  //  Description
+  //  Representation of a playing card with two basic characteristics,
+  //  such as suit and card number (or rank, sequence etc)
+  // including (and originally designed to cover) standard deck of playing cards
   private Suit suit;
   private CardNumber cardnumber;
 

@@ -20,9 +20,11 @@ public class DeckTest {
     assertEquals(CardNumber.values().length * Suit.values().length, deck.cardCount());
   }
 
-  // @Test 
-  // public void newDeckIsFullOfCards(){
-  //   for (i=1; i<= deck.cardCount(); i++)
-  //     assertEquals(deck[i].class, Card);
-  // }
+  @Test 
+  public void newDeckIsFullOfCards(){
+    for (int i=0; i< deck.cardCount(); i++){
+      // System.out.println("" + deck.getCardByIndex(i).getSuit() + deck.getCardByIndex(i).getCardNumber());
+      assertEquals( deck.getCardByIndex(i).getClass(), Card.class );
+    }
+  }
 }
