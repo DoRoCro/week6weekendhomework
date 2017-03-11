@@ -17,11 +17,12 @@ public class DeckTest {
 
   @Test
   public void canCreateNewFullDeck(){
-    assertEquals(CardNumber.values().length * Suit.values().length, deck.CardCount());
+    assertEquals(CardNumber.values().length * Suit.values().length, deck.cardCount());
   }
 
   // @Test 
-  // public void newDeckHasCardsInIt(){
-  //   assertEquals(deck[1].class, Card);
+  // public void newDeckIsFullOfCards(){
+  //   for (i=1; i<= deck.cardCount(); i++)
+  //     assertEquals(deck[i].class, Card);
   // }
 }

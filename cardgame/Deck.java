@@ -1,11 +1,17 @@
 package cardgame;
+import java.util.ArrayList;
 
 public class Deck{
 
-  public Deck(CardNumber[] faces, Suit[] suits){}
+  private ArrayList<Card> deck;
+
+  public Deck(CardNumber[] faces, Suit[] suits){
+    deck = new ArrayList<Card>();
+
+  }
 
 
-  public int CardCount(){
+  public int cardCount(){
     return 52;
   }  
 }
