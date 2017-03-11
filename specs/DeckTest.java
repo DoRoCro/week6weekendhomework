@@ -48,4 +48,13 @@ public class DeckTest {
     // System.out.println(signature2);
   }
 
+  @Test
+  public void canDealACard(){
+    int cardsBefore = deck.cardCount();
+    Card dealt = deck.dealCard();
+    int cardsAfter = deck.cardCount();
+    assertEquals("ACE of SPADES" , dealt.toString());
+    assertEquals(cardsBefore , cardsAfter + 1 );
+  }
+
 }

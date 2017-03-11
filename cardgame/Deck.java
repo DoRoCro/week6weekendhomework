@@ -24,11 +24,17 @@ public class Deck{
   }
 
   public Card getCardByIndex(int index){
+    // does not remove from deck, only lists
     return deck.get(index);
   }  
 
   public void shuffle(){
     Collections.shuffle(this.deck);
+  }
+
+  public Card dealCard(){
+    Card dealt = this.deck.remove(this.cardCount()-1);
+    return dealt;
   }
 
 }
