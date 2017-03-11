@@ -39,7 +39,13 @@ public class DeckTest {
     for (int i=0; i< deck.cardCount(); i++) {
       signature2 += deck.getCardByIndex(i).toString();
     }
+    // Not 100% guaranteed but shuffle matching initial 
+    //list very low likelihood for more than a few cards
+    // 52 cards would be 1 in 52!  (approx 10^66)
+    // assuming Collections.shuffle() is genuinely random
     assertEquals(false, signature2 == signature1);
+    // System.out.println(signature1);
+    // System.out.println(signature2);
   }
 
 }
