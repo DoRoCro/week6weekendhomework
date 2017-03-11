@@ -27,4 +27,15 @@ public class DeckTest {
       assertEquals( deck.getCardByIndex(i).getClass(), Card.class );
     }
   }
+
+  // @Test
+  // public void canShuffleDeck(){
+  //   String signature1 = ""
+  //   String signature2 = ""
+  //   for (int i=0; i< deck.cardCount(); i++) {
+  //     signature1 += deck.getCardByIndex(i).toString();
+      
+  //   }
+  // }
+
 }

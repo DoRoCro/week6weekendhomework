@@ -25,4 +25,9 @@ public class Deck{
   public Card getCardByIndex(int index){
     return deck.get(index);
   }  
+
+  // public shuffle(){
+  //   this.deck.shuffle();
+  // }
+
 }

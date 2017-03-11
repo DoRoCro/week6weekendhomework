@@ -42,5 +42,8 @@ public class Card {
   //   return hash(this.suit, this.cardnumber);
   // }
 
+  public String toString(){
+    return "" + this.cardnumber + " of " + this.suit;
+  }
 
 }

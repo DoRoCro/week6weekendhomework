@@ -39,4 +39,10 @@ public class CardTest {
   public void cardHasColour() {
     assertEquals(SuitColour.RED, card.getSuitColour());
   }
+
+  @Test 
+  public void cardCanSayName(){
+    assertEquals("ACE of HEARTS", card.toString());
+  }
+
 }
