@@ -35,4 +35,8 @@ public class CardTest {
     assertEquals(true, card2.equals(card));
   }
 
+  @Test
+  public void cardHasColour() {
+    assertEquals(SuitColour.RED, card.getSuitColour());
+  }
 }

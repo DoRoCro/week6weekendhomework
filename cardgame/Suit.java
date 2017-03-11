@@ -15,4 +15,8 @@ public enum Suit {
   public SuitColour colour(Suit suit){
     return suit.colour;
   }
+
+  public SuitColour colour(){
+    return this.colour;
+  }
 }

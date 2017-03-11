@@ -23,6 +23,10 @@ public class Card {
     return this.cardnumber;
   }
 
+  public SuitColour getSuitColour(){
+    return this.suit.colour();
+  }
+
   // @Override
   public Boolean equals(Card card){
     if (card instanceof Card) 
