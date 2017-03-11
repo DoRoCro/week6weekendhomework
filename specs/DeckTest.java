@@ -28,14 +28,18 @@ public class DeckTest {
     }
   }
 
-  // @Test
-  // public void canShuffleDeck(){
-  //   String signature1 = ""
-  //   String signature2 = ""
-  //   for (int i=0; i< deck.cardCount(); i++) {
-  //     signature1 += deck.getCardByIndex(i).toString();
-      
-  //   }
-  // }
+  @Test
+  public void canShuffleDeck(){
+    String signature1 = "";
+    String signature2 = "";
+    for (int i=0; i< deck.cardCount(); i++) {
+      signature1 += deck.getCardByIndex(i).toString();
+    }
+    deck.shuffle();
+    for (int i=0; i< deck.cardCount(); i++) {
+      signature2 += deck.getCardByIndex(i).toString();
+    }
+    assertEquals(false, signature2 == signature1);
+  }
 
 }

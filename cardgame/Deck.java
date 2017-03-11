@@ -1,5 +1,6 @@
 package cardgame;
 import java.util.ArrayList;
+import java.util.*;
 
 public class Deck{
   // Description
@@ -26,8 +27,8 @@ public class Deck{
     return deck.get(index);
   }  
 
-  // public shuffle(){
-  //   this.deck.shuffle();
-  // }
+  public void shuffle(){
+    Collections.shuffle(this.deck);
+  }
 
 }
