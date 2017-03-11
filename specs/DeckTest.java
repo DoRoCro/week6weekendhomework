@@ -11,7 +11,7 @@ public class DeckTest {
 
   @Before
   public void before(){  
-    card = new Card(Suit.HEARTS, CardNumber.ACE );
+    card = new Card(Suit.values()[0], CardNumber.values()[0]);
     deck = new Deck( CardNumber.values(), Suit.values() );
   }
 
