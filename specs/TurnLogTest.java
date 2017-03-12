@@ -33,12 +33,12 @@ public class TurnLogTest{
     assertEquals(hand1.getName(), logmesg.getHand(player1).getName() );
   }
 
-  // @Test public void canGetPlayerFromTurnLog() {
+  // @Test
+  // public void canGetPlayerFromTurnLog() {
   //   logmesg = new TurnLog(player1, hand1);
-  //   assertEquals(player1.getName(), logmesg.getPlayer().getName())
-
-
+  //   assertEquals(player1.getName(), logmesg.getPlayer().getName());
   // }
+
   // @Test
   // public void canGetTurnLogBack() {
   //   logmesg = new TurnLog(player1, hand1);
