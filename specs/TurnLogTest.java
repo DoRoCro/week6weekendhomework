@@ -28,10 +28,23 @@ public class TurnLogTest{
     log = new TurnLog();
   }
 
+  // @Test
+  // public void canAddTurnLogEntry(){
+  //   assertEquals(hand1.getName(), log.getHand(player1).getName() );
+  // }
+
   @Test
-  public void canAddTurnLogEntry(){
-    assertEquals(hand1.getName(), log.getHand(player1).getName() );
+  public void canListLogEntry(){
+    
   }
+
+
+  // @Test
+  // public void canGetLastLogEntry() {
+  //   log.newLogEntry(player1, hand1);
+  //   log.newLogEntry(player2, hand2);
+  // } 
+
 
   // @Test
   // public void canGetPlayerFromTurnLog() {

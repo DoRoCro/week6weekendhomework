@@ -34,6 +34,22 @@ public class Hand implements PlayerAttribs {
     return this.faceups.get(this.faceups.size() - 1 ).toString();
   }
 
+  public String toString(){
+    // return string listing contents of hand
+    String holding = "Shown cards: ";
+    for ( Card faceup: faceups){
+      holding += faceup.toString();
+    }
+    holding += "\nHidden cards: ";
+    for ( Card facedown: facedowns){
+      holding += facedown.toString();
+    }
+    System.out.println(holding);    // debug line
+    return holding;
+  }
+
+
+
   public Boolean equals(Hand handtocompare ){
       System.out.println("got here");
       System.out.println("Object" + this );
