@@ -7,9 +7,14 @@ public class TurnLog{
   public static ArrayList<HashMap> log;
   public HashMap<Player, Hand> logentry;
 
-  public TurnLog(Player player, Hand hand){
-    this.logentry = new HashMap<Player, Hand>();
-    this.logentry.put(player, hand);
+  public static void TurnLog(){
+    log = new ArrayList<HashMap>();
+  }
+
+  public void newLogEntry(Player player, Hand hand){
+    logentry = new HashMap<Player, Hand>();
+    logentry.put(player, hand);
+    this.log.add(logentry);
   }
 
   public Hand getHand(Player player1){

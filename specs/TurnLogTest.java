@@ -9,7 +9,7 @@ public class TurnLogTest{
   String player1name = "Zaphod";
   String player2name = "Zarquon";
   String[] players;
-  TurnLog logmesg ;
+  TurnLog log;
   Card card1;
   Card card2;
   Hand hand1;
@@ -25,12 +25,12 @@ public class TurnLogTest{
     hand2 = new Hand(player2);
     hand1.receiveCard(card1);
     hand2.receiveCard(card2);
+    log = new TurnLog();
   }
 
   @Test
-  public void canAddTurnLog(){
-    logmesg = new TurnLog(player1, hand1);
-    assertEquals(hand1.getName(), logmesg.getHand(player1).getName() );
+  public void canAddTurnLogEntry(){
+    assertEquals(hand1.getName(), log.getHand(player1).getName() );
   }
 
   // @Test
