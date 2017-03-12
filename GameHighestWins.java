@@ -1,5 +1,5 @@
 package cardgame;
-public class Game implements GameController {
+public class GameHighestWins implements GameController {
     public Player[] players;
     Deck[] decks;
 

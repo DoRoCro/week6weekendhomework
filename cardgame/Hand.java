@@ -33,4 +33,18 @@ public class Hand implements PlayerAttribs {
     this.faceups.add( this.facedowns.remove(index) );
     return this.faceups.get(this.faceups.size() - 1 ).toString();
   }
+
+  public Boolean equals(Hand handtocompare ){
+      System.out.println("got here");
+      System.out.println("Object" + this );
+      System.out.println("param" + handtocompare );
+    if (this.player == handtocompare.player &&
+        this.faceups == handtocompare.faceups &&
+        this.facedowns == handtocompare.faceups){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
 }
