@@ -19,8 +19,8 @@ public enum CardNumber {
   CardNumber(int score){
     this.score = score;
   }
-  public int score(CardNumber cardnumber){
-    return cardnumber.score;
+  public int score(){
+    return this.score;
   }
 
 

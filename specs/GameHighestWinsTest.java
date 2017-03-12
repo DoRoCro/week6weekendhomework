@@ -48,13 +48,38 @@ public class GameHighestWinsTest {
     // System.out.println(game.players[1].getName());
     assertEquals("StringFromSetup", game.players[0].getName());
   }
+  
   @Test
   public void checkTurnGetsCard(){
+    // works as long as deck has not been shuffled
     game = new GameHighestWins( mockLog, mockViewer );
     game.setup();
     game.round();
     // System.out.println(game.hands[0].toString());
     assertEquals( "Shown cards: ACE of SPADES\nHidden cards: " , game.hands[0].toString());
+    assertEquals( "Shown cards: KING of SPADES\nHidden cards: " , game.hands[1].toString());
   }
+
+  @Test
+  public void checkTurnGetsDifferentCardAfterShuffle(){
+    // works 51/52 times? 
+    game = new GameHighestWins( mockLog, mockViewer );
+    game.setup();
+    game.shuffleDeck();
+    game.round();
+    // System.out.println(game.hands[0].toString());
+    assertNotEquals( "Shown cards: ACE of SPADES\nHidden cards: " , game.hands[0].toString());
+    assertNotEquals( "Shown cards: KING of SPADES\nHidden cards: " , game.hands[1].toString());
+  }  
+
+  @Test
+  public void checkScoresEndRound(){
+    game = new GameHighestWins( mockLog, mockViewer );
+    game.setup();
+    // game.shuffleDeck();
+    game.round();
+
+  }
+
 
 }

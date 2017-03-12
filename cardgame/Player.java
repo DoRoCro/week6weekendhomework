@@ -18,6 +18,9 @@ public class Player implements PlayerAttribs {
     return this.score;
   }
 
+  public void setScore(int score){
+    this.score = score;
+  }
   // public Hand getHand(){
   //   return ;
   // }

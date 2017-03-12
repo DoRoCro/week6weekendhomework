@@ -30,6 +30,11 @@ public class GameHighestWins implements GameController {
     }
   }
 
+  public void shuffleDeck(){
+    this.deck.shuffle();
+  }
+
+
   public void round(){
     // each player takes a turn
     // for (Player player : players){  // wanted to use this, but ran out of time to refactor to make it work
@@ -38,6 +43,29 @@ public class GameHighestWins implements GameController {
     }
     // any end round logic
     // player show cards, work out who wins round
+    Integer[] scores = new Integer[2];
+    for (int i=0; i < this.players.length; i++ ){
+      scores[i] = determineScore(hands[i]);
+      players[i].setScore(scores[i]);
+    }
+    if (players[0].getScore() == players[1].getScore()){
+      // drawn round
+    } 
+    else if (players[0].getScore() > players[1].getScore()) {
+      // player1 wins round
+    }
+    else {
+      // player2 wins round
+    }
+
+
+  }
+    
+  private int determineScore(Hand hand){
+    int result;
+    Card card = hand.topShownCard();
+    result = card.getCardNumber().score();
+    return result;
   }
   
   public void turn(Player player, Hand hand){

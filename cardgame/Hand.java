@@ -48,7 +48,9 @@ public class Hand implements PlayerAttribs {
     return holding;
   }
 
-  
+  public Card topShownCard(){
+    return this.faceups.get(faceups.size() - 1);
+  }
 
   public Boolean equals(Hand handtocompare ){
       System.out.println("got here");
