@@ -44,8 +44,17 @@ public class GameHighestWinsTest {
     // Mockito.when(spyDice.roll()).thenReturn(3);
     // Mockito.when(mockViewer.getPlayerName()).thenReturn("mocked");
     
-    System.out.println(game.players[0].getName());
-    System.out.println(game.players[1].getName());
+    // System.out.println(game.players[0].getName());
+    // System.out.println(game.players[1].getName());
     assertEquals("StringFromSetup", game.players[0].getName());
   }
+  @Test
+  public void checkTurnGetsCard(){
+    game = new GameHighestWins( mockLog, mockViewer );
+    game.setup();
+    game.round();
+    // System.out.println(game.hands[0].toString());
+    assertEquals( "Shown cards: ACE of SPADES\nHidden cards: " , game.hands[0].toString());
+  }
+
 }

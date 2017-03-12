@@ -44,11 +44,11 @@ public class Hand implements PlayerAttribs {
     for ( Card facedown: facedowns){
       holding += facedown.toString();
     }
-    System.out.println(holding);    // debug line
+    // System.out.println(holding);    // debug line
     return holding;
   }
 
-
+  
 
   public Boolean equals(Hand handtocompare ){
       System.out.println("got here");
