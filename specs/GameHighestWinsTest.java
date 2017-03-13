@@ -48,7 +48,7 @@ public class GameHighestWinsTest {
     // System.out.println(game.players[1].getName());
     assertEquals("StringFromSetup", game.players[0].getName());
   }
-  
+
   @Test
   public void checkTurnGetsCard(){
     // works as long as deck has not been shuffled
@@ -78,7 +78,6 @@ public class GameHighestWinsTest {
     game.setup();
     // game.shuffleDeck();
     game.round();
-
   }
 
 

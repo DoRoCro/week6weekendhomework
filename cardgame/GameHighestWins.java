@@ -50,15 +50,16 @@ public class GameHighestWins implements GameController {
     }
     if (players[0].getScore() == players[1].getScore()){
       // drawn round
+      // do nothing
     } 
     else if (players[0].getScore() > players[1].getScore()) {
       // player1 wins round
+      players[0].setScore(players[0].getScore() + 1);
     }
     else {
       // player2 wins round
+      players[1].setScore(players[1].getScore() + 1);
     }
-
-
   }
     
   private int determineScore(Hand hand){
@@ -81,6 +82,9 @@ public class GameHighestWins implements GameController {
   }
 
   public Boolean isOver(){
+    if (deck.cardCount() < 2){
+      return true;
+    }
     return false;
   }
 
@@ -94,15 +98,13 @@ public class GameHighestWins implements GameController {
     this.deck.shuffle();
     while (! this.isOver() && ! this.isWon() ){
       this.round();
+      System.out.println("Player 1 Hand " + hands[0].toString());
+      System.out.println("Player 2 Hand " + hands[1].toString());
+      System.out.println("Scores: Player1 " + players[0].getScore() + " Player 2 "+ players[1].getScore());
 
     }
-  };
+    System.out.println("Scores: Player1 " + players[0].getScore() + " Player 2 "+ players[1].getScore());
+  }
+
 }
 
-// public static void main(String[] args) {
-//   TurnLog turnlog = new TurnLog();
-//   GameHigheseWins game = new GameHighestWins();
-//   game.setup();
-//   game.shuffleDeck();
-//   game.run(); 
-// }
