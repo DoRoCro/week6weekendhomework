@@ -56,8 +56,8 @@ public class GameHighestWinsTest {
     game.setup();
     game.round();
     // System.out.println(game.hands[0].toString());
-    assertEquals( "Shown cards: ACE of SPADES\nHidden cards: " , game.hands[0].toString());
-    assertEquals( "Shown cards: KING of SPADES\nHidden cards: " , game.hands[1].toString());
+    assertEquals( "Shown cards: ACE of SPADES\nHidden cards:" , game.hands[0].toString());
+    assertEquals( "Shown cards: KING of SPADES\nHidden cards:" , game.hands[1].toString());
   }
 
   @Test
@@ -68,8 +68,8 @@ public class GameHighestWinsTest {
     game.shuffleDeck();
     game.round();
     // System.out.println(game.hands[0].toString());
-    assertNotEquals( "Shown cards: ACE of SPADES\nHidden cards: " , game.hands[0].toString());
-    assertNotEquals( "Shown cards: KING of SPADES\nHidden cards: " , game.hands[1].toString());
+    assertNotEquals( "Shown cards: ACE of SPADES\nHidden cards:" , game.hands[0].toString());
+    assertNotEquals( "Shown cards: KING of SPADES\nHidden cards:" , game.hands[1].toString());
   }  
 
   @Test

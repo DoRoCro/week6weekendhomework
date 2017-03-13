@@ -36,13 +36,13 @@ public class Hand implements PlayerAttribs {
 
   public String toString(){
     // return string listing contents of hand
-    String holding = "Shown cards: ";
+    String holding = "Shown cards:";
     for ( Card faceup: faceups){
-      holding += faceup.toString();
+      holding += " " + faceup.toString();
     }
-    holding += "\nHidden cards: ";
+    holding += "\nHidden cards:";
     for ( Card facedown: facedowns){
-      holding += facedown.toString();
+      holding += " " + facedown.toString();
     }
     // System.out.println(holding);    // debug line
     return holding;

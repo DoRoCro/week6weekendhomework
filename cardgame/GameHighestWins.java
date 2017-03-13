@@ -46,19 +46,19 @@ public class GameHighestWins implements GameController {
     Integer[] scores = new Integer[2];
     for (int i=0; i < this.players.length; i++ ){
       scores[i] = determineScore(hands[i]);
-      players[i].setScore(scores[i]);
     }
-    if (players[0].getScore() == players[1].getScore()){
+    if (scores[0] == scores[1]){
       // drawn round
       // do nothing
     } 
-    else if (players[0].getScore() > players[1].getScore()) {
+    else if (scores[0] > scores[1]) {
       // player1 wins round
       players[0].setScore(players[0].getScore() + 1);
     }
     else {
       // player2 wins round
       players[1].setScore(players[1].getScore() + 1);
+
     }
   }
     
@@ -96,14 +96,17 @@ public class GameHighestWins implements GameController {
 
   public void run(){
     this.deck.shuffle();
+    int i = 0;
     while (! this.isOver() && ! this.isWon() ){
+      i++;
       this.round();
+      System.out.println("Round: " + i);
       System.out.println("Player 1 Hand " + hands[0].toString());
       System.out.println("Player 2 Hand " + hands[1].toString());
-      System.out.println("Scores: Player1 " + players[0].getScore() + " Player 2 "+ players[1].getScore());
+      System.out.println("Scores: Player 1=" + players[0].getScore() + "  Player 2="+ players[1].getScore());
 
     }
-    System.out.println("Scores: Player1 " + players[0].getScore() + " Player 2 "+ players[1].getScore());
+    System.out.println("Final Scores: Player1 =" + players[0].getScore() + " Player2 ="+ players[1].getScore());
   }
 
 }
