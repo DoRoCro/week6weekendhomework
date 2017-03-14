@@ -23,8 +23,10 @@ public class GameHighestWins implements GameController {
     for (int i=0; i < this.players.length; i++ ){
       // System.out.println("player " + i);
       // System.out.println("players.length " + players.length);
-      // this.players[i] = new Player(viewer.getPlayerName());
-      this.players[i] = new Player("StringFromSetup");  // debug due to problems with viewer... 
+      this.players[i] = new Player(viewer.getPlayerName());
+      
+      // System.out.println(this.viewer.getPlayerName());
+      // this.players[i] = new Player("StringFromSetup");  // debug due to problems with viewer... 
       this.hands[i] = new Hand(this.players[i]);
       // System.out.println("player" + this.players[i].getName());
     }

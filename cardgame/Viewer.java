@@ -1,7 +1,7 @@
 package cardgame;
 
 public class Viewer{
-
+  
   public Viewer(){
     
   }

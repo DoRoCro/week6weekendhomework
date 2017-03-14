@@ -23,12 +23,14 @@ public class GameHighestWinsTest {
 
   @Before
   public void before(){  
-    Viewer mockViewer = mock(Viewer.class);
     TurnLog mockLog = mock(TurnLog.class);
     players = new String[2];
     players[0] = player1name;
     players[1] = player2name;
     turnlog = new TurnLog();
+    viewer = new Viewer();
+    mockViewer = new Viewer();
+    mockViewer = mock(Viewer.class);
   }
 
   @Test
@@ -40,19 +42,20 @@ public class GameHighestWinsTest {
   @Test
   public void checkGamePlayer1GetsName(){
     game = new GameHighestWins( mockLog, mockViewer );
+    Mockito.when(mockViewer.getPlayerName()).thenReturn("mocked");
+    System.out.println(mockViewer.getPlayerName());
     game.setup();
     // Mockito.when(spyDice.roll()).thenReturn(3);
-    // Mockito.when(mockViewer.getPlayerName()).thenReturn("mocked");
-    
     // System.out.println(game.players[0].getName());
     // System.out.println(game.players[1].getName());
-    assertEquals("StringFromSetup", game.players[0].getName());
+    assertEquals("mocked", game.players[0].getName());
+    assertEquals("mocked", game.players[1].getName());
   }
 
   @Test
   public void checkTurnGetsCard(){
     // works as long as deck has not been shuffled
-    game = new GameHighestWins( mockLog, mockViewer );
+    game = new GameHighestWins( mockLog, viewer );
     game.setup();
     game.round();
     // System.out.println(game.hands[0].toString());
@@ -63,7 +66,7 @@ public class GameHighestWinsTest {
   @Test
   public void checkTurnGetsDifferentCardAfterShuffle(){
     // works 51/52 times? 
-    game = new GameHighestWins( mockLog, mockViewer );
+    game = new GameHighestWins( mockLog, viewer );
     game.setup();
     game.shuffleDeck();
     game.round();
@@ -74,7 +77,7 @@ public class GameHighestWinsTest {
 
   @Test
   public void checkScoresEndRound(){
-    game = new GameHighestWins( mockLog, mockViewer );
+    game = new GameHighestWins( turnlog, viewer );
     game.setup();
     // game.shuffleDeck();
     game.round();
